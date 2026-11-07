@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASSIRÉ KAMARA — Ingénieur Systèmes & Logiciel | Mali</title>
+  <meta name="description"
+    content="Portfolio officiel de Papin - Ingénieur Systèmes & Logiciel basé au Mali. Créateur du langage MaliLang, Architectures SaaS Multi-Tenant Laravel, IA Prédictive Télécom & Infrastructure VoIP.">
+  <meta name="theme-color" content="#030712">
+
+  <!-- Google Fonts: JetBrains Mono, Syne, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,800;1,400&family=Syne:wght@500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['Syne', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body
+  class="bg-gray-950 text-gray-100 font-sans selection:bg-cyan-500 selection:text-black overflow-x-hidden antialiased">
+
+  <!-- CURSEUR NÉON CYBERNETIQUE -->
+  <div id="cursor-outer"></div>
+  <div id="cursor-inner"></div>
+
+  <!-- EASTER EGG MODAL -->
+  <div id="easterEggModal">
+    <div class="text-center p-8 border border-cyan-800 rounded-xl bg-gray-950 max-w-md mx-4">
+      <div class="font-mono text-xs text-amber-400 mb-4">// ACCÈS ADMINISTRATEUR ACCORDÉ</div>
+      <pre class="text-cyan-400 font-mono text-xs leading-relaxed mb-6">██╗   ██╗ █████╗ ██╗     ██╗
+██║   ██║██╔══██╗██║     ██║
+██║   ██║███████║██║     ██║
+╚██╗ ██╔╝██╔══██║██║     ██║
+ ╚████╔╝ ██║  ██║███████╗██║
+  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚═╝</pre>
+      <p class="font-mono text-xs text-gray-300 mb-2">Bienvenue dans le système interne.</p>
+      <p class="font-mono text-xs text-emerald-400 mb-6">NŒUD BAMAKO // SYSTÈMES NOMINAUX // ARCHITECTE IDENTIFIÉ</p>
+      <button onclick="document.getElementById('easterEggModal').classList.remove('show')"
+        class="px-6 py-2 border border-cyan-700 text-cyan-400 font-mono text-xs rounded hover:bg-cyan-950 transition-all">
+        FERMER LA CONNEXION
+      </button>
+    </div>
+  </div>
+
+  <!-- ACTIVATION AUDIO OPTIONNELLE -->
+  <div class="fixed top-6 right-6 z-50 flex items-center gap-3">
+    <button id="soundToggle"
+      class="cyber-btn text-xs font-mono px-3 py-1.5 rounded border border-gray-800 bg-gray-900/80 backdrop-blur hover:border-cyan-500 transition-all flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-gray-500" id="soundIndicator"></span>
+      <span id="soundText">AUDIO : DÉSACTIVÉ</span>
+    </button>
+  </div>
+
+  <!-- BARRE DE NAVIGATION FLOTTANTE PAR STRATE -->
+  <nav class="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4 font-mono text-xs text-gray-500">
+    <a href="#strata-0" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-cyan-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-cyan-400">00 // INITIALISATION</span>
+    </a>
+    <a href="#strata-1" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-cyan-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-cyan-400">01 // INFRASTRUCTURE</span>
+    </a>
+    <a href="#strata-skills" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-cyan-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-cyan-400">01.5 // CAPACITÉS</span>
+    </a>
+    <a href="#strata-2" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-cyan-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-cyan-400">02 // MULTI-TENANCY</span>
+    </a>
+    <a href="#strata-3" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-cyan-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-cyan-400">03 // IA CHURN</span>
+    </a>
+    <a href="#strata-4" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-amber-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-amber-400">04 // BATTLEFIELD</span>
+    </a>
+    <a href="#strata-5" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-emerald-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-emerald-400">05 // MALILANG CORE</span>
+    </a>
+    <a href="#strata-6" class="nav-dot flex items-center gap-3 group">
+      <span class="w-2 h-2 rounded-full bg-gray-700 group-hover:bg-cyan-400 transition-all"></span>
+      <span class="opacity-0 group-hover:opacity-100 transition-all text-cyan-400">06 // LAB & CONTACT</span>
+    </a>
+  </nav>
+
+  <!-- ONBOARDING & HERO SYSTEM INIT (STRATA 0) -->
+  <section id="strata-0"
+    class="min-h-screen relative flex flex-col justify-between p-6 md:p-12 border-b border-gray-900 bg-grid-pattern">
+
+    <!-- SÉQUENCE D'ONBOARDING ANIMÉE -->
+    <div class="font-mono text-xs text-gray-600 mb-4 space-y-1">
+      <div class="boot-line-1 text-cyan-600">&gt; CONNEXION DÉTECTÉE...</div>
+      <div class="boot-line-2 text-gray-500">&gt; ACCÈS NIVEAU : <span class="text-amber-500">VISITEUR</span></div>
+      <div class="boot-line-3 text-gray-500">&gt; INITIALISATION DU SYSTÈME EN COURS...</div>
+      <div class="boot-line-4 text-emerald-500">&gt; PRÊT. BIENVENUE DANS THE MASSIRE ENGINE.</div>
+    </div>
+
+    <!-- BARRE DE TÉLÉMÉTRIE SUPÉRIEURE -->
+    <div class="flex justify-between items-start font-mono text-xs text-gray-500 border-b border-gray-900 pb-4">
+      <div>
+        <span class="text-cyan-500 font-semibold">[ THE MASSIRE ENGINE v4.2 ]</span><br>
+        <span>NŒUD : BAMAKO_MALI // LATITUDE : 12.6392° N, LONGITUDE : 8.0029° W</span>
+      </div>
+      <div class="text-right">
+        <span class="text-emerald-500 font-mono">STATUT : TOUS_LES_SYSTÈMES_OPÉRATIONNELS</span><br>
+        <span>CONTRAINTES : HAUTE_RÉSILIENCE // HEURE_BAMAKO : <span id="bamakoClock"
+            class="text-white">--:--:--</span></span>
+      </div>
+    </div>
+
+    <!-- CONTENU PRINCIPAL DU HERO -->
+    <div class="my-auto max-w-5xl hero-content">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded bg-cyan-950/40 border border-cyan-800/50 text-cyan-400 font-mono text-xs mb-6">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        INITIALISATION DU SYSTÈME TERMINÉE — ACCÈS VISITEUR ACCORDÉ
+      </div>
+
+      <h1
+        class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white mb-6">
+        MASSIRE<span class="text-cyan-500"> KAMARA.</span>
+      </h1>
+
+      <p class="font-mono text-lg md:text-2xl text-gray-300 max-w-3xl leading-relaxed mb-8">
+        « Tout ce que vous voyez a commencé comme un problème. »
+      </p>
+
+      <p class="text-gray-400 text-base md:text-lg max-w-2xl font-light mb-10">
+        Je ne construis pas de simples pages web. Je conçois des <strong class="text-gray-200">architectures SaaS
+          multi-tenant complexes</strong>, des <strong class="text-gray-200">moteurs d'IA prédictifs</strong>, des
+        <strong class="text-gray-200">infrastructures VoIP résilientes</strong>, et mon propre <strong
+          class="text-cyan-400 font-mono">langage de programmation en Bambara : MaliLang</strong>.
+      </p>
+
+      <div class="flex flex-wrap gap-4 font-mono text-sm">
+        <a href="#strata-5"
+          class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded transition-all flex items-center gap-3">
+          <span>TESTER LE REPL MALILANG</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a href="#strata-1"
+          class="px-6 py-3 border border-gray-800 hover:border-gray-600 bg-gray-900/60 rounded text-gray-300 transition-all">
+          EXPLORER LES STRATES DU SYSTÈME ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- RÉSUMÉ TECHNIQUE INFÉRIEUR -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-xs border-t border-gray-900 pt-6 text-gray-400">
+      <div>
+        <span class="text-gray-600 uppercase block">Noyau Backend</span>
+        <span class="text-gray-200">Laravel / PHP / Python / MySQL / Redis</span>
+      </div>
+      <div>
+        <span class="text-gray-600 uppercase block">Infrastructure</span>
+        <span class="text-gray-200">Docker / Nginx / Asterisk / BIND9 / AWS</span>
+      </div>
+      <div>
+        <span class="text-gray-600 uppercase block">Frontend & Mobile</span>
+        <span class="text-gray-200">Angular / TypeScript / Flutter / Dart</span>
+      </div>
+      <div>
+        <span class="text-gray-600 uppercase block">Conception de Langage</span>
+        <span class="text-cyan-400">MaliLang (AST & REPL Bambara)</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- STRATE 01 : INFRASTRUCTURE & LE WEB INVISIBLE -->
+  <section id="strata-1" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950/70">
+    <div class="max-w-6xl mx-auto">
+      <div class="font-mono text-xs text-cyan-500 mb-2">STRATE 01 // COUCHES SYSTÈME PROFONDES</div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+        Infrastructure & Le Web Invisible
+      </h2>
+      <p class="text-gray-400 text-lg max-w-3xl mb-12">
+        Les interfaces ne sont solides que si les serveurs derrière elles le sont. Je gère des nœuds Linux bare-metal,
+        la résolution DNS, l'automatisation SSL, la conteneurisation Docker et les commutateurs téléphoniques VoIP.
+      </p>
+
+      <!-- GRILLE DES CARTES D'INFRASTRUCTURE (4 blocs) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- CARTE 1: SERVEURS & CONTENEURS -->
+        <div class="p-6 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 transition-all">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs text-cyan-400">[ HÉBERGEMENT & DEVOPS ]</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 monitor-dot" style="--pulse-speed: 2.1s"></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-3">Ubuntu, Docker & Serveurs Web</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Pipelines de déploiement à haute disponibilité sur Ubuntu Server, reverse proxy Nginx & Apache,
+            orchestration multi-conteneurs Docker et certificats SSL automatisés avec Certbot.
+          </p>
+          <div class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Docker</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Nginx</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Ubuntu</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">AWS</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">OVH</span>
+          </div>
+        </div>
+
+        <!-- CARTE 2: VOIP & TÉLÉCOM -->
+        <div class="p-6 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 transition-all">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs text-cyan-400">[ TÉLÉCOM & VOIP ]</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 monitor-dot" style="--pulse-speed: 3.4s"></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-3">Infrastructure Asterisk PBX & Jitsi</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Trunks téléphoniques personnalisés sous Asterisk & FreePBX avec protocoles IAX, couplés à des serveurs de
+            visioconférence WebRTC auto-hébergés sur Jitsi Meet.
+          </p>
+          <div class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Asterisk</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">FreePBX</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Trunks IAX</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Jitsi</span>
+          </div>
+        </div>
+
+        <!-- CARTE 3: RÉSEAU & DNS -->
+        <div class="p-6 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 transition-all">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-mono text-xs text-cyan-400">[ RÉSEAUX & DNS ]</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 monitor-dot" style="--pulse-speed: 1.8s"></span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-white mb-3">BIND9 & Réseaux Faible Latence</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Configuration de serveurs DNS autoritaires avec BIND9, routage par sous-domaines, et stratégies de
+            résilience réseau conçues pour les réalités du web africain.
+          </p>
+          <div class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+            <span class="px-2 py-1 bg-gray-800/80 rounded">BIND9</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Protocole DNS</span>
+            <span class="px-2 py-1 bg-gray-800/80 rounded">Sous-domaines</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARTE 4: SÉCURITÉ & AUTH -->
+      <div
+        class="p-6 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 transition-all md:col-span-3 lg:col-span-1">
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-mono text-xs text-cyan-400">[ SÉCURITÉ & AUTH ]</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 monitor-dot" style="--pulse-speed: 2.7s"></span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-3">Authentification & Contrôle d'Accès</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Sécurisation des APIs REST via Laravel Sanctum, gestion fine des permissions avec Spatie, certificats SSL
+          automatisés via Certbot et architecture de tokens sécurisés multi-tenant.
+        </p>
+        <div class="flex flex-wrap gap-2 font-mono text-xs text-gray-500">
+          <span class="px-2 py-1 bg-gray-800/80 rounded">Sanctum</span>
+          <span class="px-2 py-1 bg-gray-800/80 rounded">Spatie</span>
+          <span class="px-2 py-1 bg-gray-800/80 rounded">SSL/TLS</span>
+          <span class="px-2 py-1 bg-gray-800/80 rounded">Certbot</span>
+        </div>
+      </div>
+
+      <!-- CALLOUT CONTEXTE AFRICAIN PRAGMATIQUE -->
+      <div
+        class="mt-12 p-6 rounded-lg border border-cyan-900/50 bg-cyan-950/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <span class="font-mono text-xs text-cyan-400 font-semibold">[ LE FACTEUR MALI : LES CONTRAINTES CRÉENT LES
+            INGÉNIEURS ]</span>
+          <p class="text-gray-300 text-sm mt-1">
+            Développer des logiciels à Bamako exige d'optimiser la bande passante, les coûts serveurs et de gérer
+            l'instabilité électrique. L'optimisation n'est pas un luxe, c'est une nécessité.
+          </p>
+        </div>
+        <div class="font-mono text-xs px-4 py-2 rounded bg-black/60 border border-gray-800 text-cyan-400 shrink-0">
+          EFFICACITÉ > SURCHARGE
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STRATE 01.5 : CAPACITÉS SYSTÈME — GRAPHE DE NŒUDS -->
+  <section id="strata-skills" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="font-mono text-xs text-cyan-500 mb-2">STRATE 01.5 // CARTOGRAPHIE DES CAPACITÉS</div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-4">Architecture des Compétences</h2>
+      <p class="text-gray-400 text-base max-w-2xl mb-12">Pas de barres de progression. Chaque capacité est prouvée par
+        un projet réel. Cliquez sur un nœud pour explorer.</p>
+
+      <div class="relative" id="skillGraph">
+        <!-- SVG CONNECTIONS -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none" id="skillSvg" style="z-index:0"></svg>
+
+        <!-- NŒUD CENTRAL -->
+        <div class="flex flex-wrap justify-center gap-6 relative" style="z-index:1">
+          <div class="w-full flex justify-center mb-4">
+            <div
+              class="px-6 py-3 rounded-full border-2 border-cyan-500 bg-cyan-950/40 text-cyan-400 font-mono font-bold text-sm">
+              MASSIRÉ KAMARA
+            </div>
+          </div>
+
+          <!-- Nœuds de compétences -->
+          <div class="skill-node group relative" data-skill="backend"
+            data-techs="Laravel · PHP · Python · MySQL · Redis · Sanctum · REST API"
+            data-project="Système Scolarité Multi-tenant">
+            <div
+              class="px-5 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:border-cyan-500 hover:bg-cyan-950/30 font-mono text-sm text-gray-300 hover:text-white transition-all text-center">
+              <span class="text-cyan-400 block text-xs mb-1">// BACKEND</span>
+              Laravel · PHP · Python
+            </div>
+          </div>
+
+          <div class="skill-node group relative" data-skill="frontend"
+            data-techs="Angular · TypeScript · JavaScript · HTML · CSS" data-project="Interface Scolarité & RESTOQR">
+            <div
+              class="px-5 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:border-emerald-500 hover:bg-emerald-950/30 font-mono text-sm text-gray-300 hover:text-white transition-all text-center">
+              <span class="text-emerald-400 block text-xs mb-1">// FRONTEND</span>
+              Angular · TypeScript
+            </div>
+          </div>
+
+          <div class="skill-node group relative" data-skill="mobile" data-techs="Flutter · Dart · Android · iOS"
+            data-project="Application mobile multi-plateforme">
+            <div
+              class="px-5 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:border-purple-500 hover:bg-purple-950/30 font-mono text-sm text-gray-300 hover:text-white transition-all text-center">
+              <span class="text-purple-400 block text-xs mb-1">// MOBILE</span>
+              Flutter · Dart
+            </div>
+          </div>
+
+          <div class="skill-node group relative" data-skill="ai"
+            data-techs="Python · Scikit-Learn · SMOTE · Decision Tree · Joblib" data-project="Prédiction Churn Télécom">
+            <div
+              class="px-5 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:border-amber-500 hover:bg-amber-950/30 font-mono text-sm text-gray-300 hover:text-white transition-all text-center">
+              <span class="text-amber-400 block text-xs mb-1">// INTELLIGENCE</span>
+              Python · ML · SMOTE
+            </div>
+          </div>
+
+          <div class="skill-node group relative" data-skill="infra"
+            data-techs="Docker · Nginx · Ubuntu · AWS · OVH · Certbot · Git" data-project="Infrastructure Multi-tenant">
+            <div
+              class="px-5 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:border-cyan-500 hover:bg-cyan-950/30 font-mono text-sm text-gray-300 hover:text-white transition-all text-center">
+              <span class="text-cyan-400 block text-xs mb-1">// INFRASTRUCTURE</span>
+              Docker · Nginx · AWS
+            </div>
+          </div>
+
+          <div class="skill-node group relative" data-skill="networks"
+            data-techs="Asterisk · FreePBX · SIP · IAX · BIND9 · DNS · Jitsi"
+            data-project="Infrastructure VoIP & Télécom">
+            <div
+              class="px-5 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:border-cyan-500 hover:bg-cyan-950/30 font-mono text-sm text-gray-300 hover:text-white transition-all text-center">
+              <span class="text-cyan-400 block text-xs mb-1">// RÉSEAUX & VOIP</span>
+              Asterisk · BIND9
+            </div>
+          </div>
+
+          <div class="skill-node group relative" data-skill="language"
+            data-techs="AST · Lexer · Parser · Interpreter · JavaScript · Bambara"
+            data-project="MaliLang — Langage Bambara">
+            <div
+              class="px-5 py-3 rounded-xl border border-2 border-emerald-700 bg-emerald-950/40 hover:border-emerald-400 font-mono text-sm text-emerald-300 hover:text-white transition-all text-center">
+              <span class="text-emerald-400 block text-xs mb-1">// LANGAGE</span>
+              MaliLang · Bambara
+            </div>
+          </div>
+        </div>
+
+        <!-- PANNEAU D'INFORMATION DU NŒUD -->
+        <div id="skillPanel" class="hidden mt-8 p-5 rounded-xl bg-gray-900 border border-gray-800 font-mono text-xs">
+          <div class="text-gray-500 text-[10px] mb-2" id="skillPanelLabel">NŒUD SÉLECTIONNÉ</div>
+          <div class="text-white font-semibold mb-2" id="skillPanelTechs"></div>
+          <div class="text-cyan-400" id="skillPanelProject">
+            <span class="text-gray-500">Projet prouvé :</span> <span id="skillPanelProjectName"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATE 02 : SYSTÈMES SAAS MULTI-TENANT -->
+  <section id="strata-2" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="font-mono text-xs text-cyan-500 mb-2">STRATE 02 // ARCHITECTURES MULTI-TENANT</div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+        Univers Numériques Isolés
+      </h2>
+      <p class="text-gray-400 text-lg max-w-3xl mb-12">
+        Conception d'applications SaaS où chaque institution ou entreprise évolue dans son propre écosystème étanche
+        avec bases de données dédiées et sous-domaines sur-mesure.
+      </p>
+
+      <!-- PROJET 1: GESTION DE SCOLARITÉ UNIVERSITAIRE -->
+      <div class="mb-12 p-8 rounded-xl bg-gray-900/40 border border-gray-800 hover:border-cyan-500/50 transition-all">
+        <div class="flex flex-col lg:flex-row justify-between gap-8">
+          <div class="space-y-4 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded bg-cyan-950 border border-cyan-800 text-cyan-400 font-mono text-xs">SAAS
+                ENTREPRISE</span>
+              <span class="font-mono text-xs text-gray-500">Stancl Tenancy + Laravel + Angular</span>
+            </div>
+            <h3 class="font-display text-2xl md:text-3xl font-bold text-white">
+              Système de Scolarité & Gestion Universitaire
+            </h3>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Un ERP académique multi-tenant complet pour facultés universitaires. Gestion des inscriptions étudiantes,
+              coefficients de modules, bulletins de notes, relevés semestriels, calculs de moyenne et gestion fine des
+              permissions.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs text-gray-400 pt-2">
+              <div class="p-2 rounded bg-black/40 border border-gray-800">
+                <span class="text-gray-600 block">Base de données</span>
+                Isolation Multi-BD
+              </div>
+              <div class="p-2 rounded bg-black/40 border border-gray-800">
+                <span class="text-gray-600 block">Auth & Sécurité</span>
+                Laravel Sanctum + Spatie
+              </div>
+              <div class="p-2 rounded bg-black/40 border border-gray-800">
+                <span class="text-gray-600 block">Interface Frontend</span>
+                Angular + TypeScript
+              </div>
+            </div>
+          </div>
+
+          <!-- APERÇU SCHÉMATIQUE DE L'ARCHITECTURE -->
+          <div
+            class="p-6 rounded-lg bg-black/80 border border-gray-800 font-mono text-xs text-gray-400 flex flex-col justify-between w-full lg:w-80 shrink-0">
+            <div>
+              <div class="text-cyan-400 border-b border-gray-800 pb-2 mb-3">// ISOLATION PAR TENANT</div>
+              <div class="space-y-2">
+                <div class="p-2 bg-gray-900 rounded border border-gray-800 flex justify-between">
+                  <span>univ-a.domaine.com</span>
+                  <span class="text-emerald-400">BD_tenant_01</span>
+                </div>
+                <div class="p-2 bg-gray-900 rounded border border-gray-800 flex justify-between">
+                  <span>univ-b.domaine.com</span>
+                  <span class="text-emerald-400">BD_tenant_02</span>
+                </div>
+                <div class="p-2 bg-gray-900 rounded border border-gray-800 flex justify-between">
+                  <span>univ-c.domaine.com</span>
+                  <span class="text-emerald-400">BD_tenant_03</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-800 text-gray-500 text-[10px]">
+              SUPERADMIN DASHBOARD & RÉPARTITEUR CENTRAL ACTIF
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJET 2: RESTOQR -->
+      <div class="mb-4 p-8 rounded-xl bg-gray-900/40 border border-gray-800 hover:border-cyan-500/50 transition-all">
+        <div class="flex flex-col lg:flex-row justify-between gap-8">
+          <div class="space-y-4 max-w-2xl">
+            <div class="flex items-center gap-3">
+              <span
+                class="px-2.5 py-1 rounded bg-amber-950 border border-amber-800 text-amber-400 font-mono text-xs">SAAS
+                RESTAURANT</span>
+              <span class="font-mono text-xs text-gray-500">Laravel + Angular + QR Code</span>
+            </div>
+            <h3 class="font-display text-2xl md:text-3xl font-bold text-white">RESTOQR — Gestion de Restaurant par QR
+            </h3>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Application SaaS de gestion de restaurant permettant aux clients de scanner un QR code pour consulter la
+              carte, passer commande et payer directement depuis leur smartphone. Interface d'administration complète
+              pour le personnel.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs text-gray-400 pt-2">
+              <div class="p-2 rounded bg-black/40 border border-gray-800">
+                <span class="text-gray-600 block">Accès Client</span>
+                QR Code → Menu Dynamique
+              </div>
+              <div class="p-2 rounded bg-black/40 border border-gray-800">
+                <span class="text-gray-600 block">Stack</span>
+                Laravel + Angular
+              </div>
+              <div class="p-2 rounded bg-black/40 border border-gray-800">
+                <span class="text-gray-600 block">Paiement</span>
+                Commande en temps réel
+              </div>
+            </div>
+          </div>
+          <div
+            class="p-6 rounded-lg bg-black/80 border border-gray-800 font-mono text-xs text-gray-400 flex flex-col justify-between w-full lg:w-80 shrink-0">
+            <div>
+              <div class="text-amber-400 border-b border-gray-800 pb-2 mb-3">// FLUX CLIENT RESTOQR</div>
+              <div class="space-y-2">
+                <div class="p-2 bg-gray-900 rounded border border-gray-800 flex justify-between">
+                  <span>📱 Scanner QR</span>
+                  <span class="text-emerald-400">→ MENU</span>
+                </div>
+                <div class="p-2 bg-gray-900 rounded border border-gray-800 flex justify-between">
+                  <span>🛒 Sélectionner</span>
+                  <span class="text-emerald-400">→ PANIER</span>
+                </div>
+                <div class="p-2 bg-gray-900 rounded border border-gray-800 flex justify-between">
+                  <span>Commander</span>
+                  <span class="text-emerald-400">→ CUISINE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STRATE 03 : IA & SYSTÈMES PRÉDICTIFS -->
+  <section id="strata-3" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950/70">
+    <div class="max-w-6xl mx-auto">
+      <div class="font-mono text-xs text-cyan-500 mb-2">STRATE 03 // INTELLIGENCE ARTIFICIELLE & MACHINE LEARNING</div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+        Moteur de Prédiction de Churn Télécom
+      </h2>
+      <p class="text-gray-400 text-lg max-w-3xl mb-12">
+        Donner aux machines une capacité d'intuition prédictive sur le comportement d'abandon des abonnés télécom via
+        des arbres de décision, le rééquilibrage de classes et la sérialisation de modèles.
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+        <div class="space-y-6">
+          <div class="p-6 rounded-xl bg-gray-900/50 border border-gray-800">
+            <h3 class="font-display text-2xl font-bold text-white mb-3">La Machine Prédictive</h3>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Les opérateurs télécom perdent des sommes importantes lors des départs imprévus d'abonnés. Ce pipeline de
+              Machine Learning ingère la durée d'engagement, les tickets d'assistance et la consommation de données pour
+              prédire le départ du client avant qu'il ne se produise.
+            </p>
+
+            <div class="space-y-2 font-mono text-xs">
+              <div class="flex justify-between p-2 rounded bg-black/50 border border-gray-800">
+                <span class="text-gray-400">Algorithme du Modèle :</span>
+                <span class="text-cyan-400">DecisionTreeClassifier (Scikit-Learn)</span>
+              </div>
+              <div class="flex justify-between p-2 rounded bg-black/50 border border-gray-800">
+                <span class="text-gray-400">Équilibrage des Classes :</span>
+                <span class="text-cyan-400">SMOTE (Synthetic Minority Over-sampling)</span>
+              </div>
+              <div class="flex justify-between p-2 rounded bg-black/50 border border-gray-800">
+                <span class="text-gray-400">Pipeline d'Encodage :</span>
+                <span class="text-cyan-400">OneHotEncoder + LabelEncoder</span>
+              </div>
+              <div class="flex justify-between p-2 rounded bg-black/50 border border-gray-800">
+                <span class="text-gray-400">Sérialisation :</span>
+                <span class="text-cyan-400">Export Modèle Joblib</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIMULATEUR D'INFÉRENCE IA INTERACTIF -->
+        <div class="p-6 rounded-xl bg-black border border-cyan-900/60 font-mono text-xs">
+          <div class="flex justify-between items-center border-b border-gray-800 pb-3 mb-4">
+            <span class="text-cyan-400 font-semibold">// SIMULATEUR D'INFÉRENCE DU MODÈLE</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px]">MODÈLE_CHARGÉ</span>
+          </div>
+
+          <!-- PIPELINE ANIMÉ -->
+          <div class="flex items-center gap-1 mb-5 flex-wrap">
+            <span class="pipeline-step text-[10px] px-2 py-0.5 rounded bg-gray-900 border border-gray-800"
+              id="pipe-data">DONNÉES</span>
+            <span class="text-gray-700 text-[10px]">→</span>
+            <span class="pipeline-step text-[10px] px-2 py-0.5 rounded bg-gray-900 border border-gray-800"
+              id="pipe-encode">ENCODAGE</span>
+            <span class="text-gray-700 text-[10px]">→</span>
+            <span class="pipeline-step text-[10px] px-2 py-0.5 rounded bg-gray-900 border border-gray-800"
+              id="pipe-model">MODÈLE</span>
+            <span class="text-gray-700 text-[10px]">→</span>
+            <span class="pipeline-step text-[10px] px-2 py-0.5 rounded bg-gray-900 border border-gray-800"
+              id="pipe-predict">PRÉDICTION</span>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            <div>
+              <div class="flex justify-between text-gray-400 mb-1">
+                <span>Ancienneté (Mois) : <span id="tenureVal" class="text-white">12</span></span>
+              </div>
+              <input type="range" id="tenureInput" min="1" max="72" value="12" class="w-full accent-cyan-500">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-gray-400 mb-1">
+                <span>Facturation Mensuelle ($) : <span id="chargesVal" class="text-white">85</span></span>
+              </div>
+              <input type="range" id="chargesInput" min="20" max="150" value="85" class="w-full accent-cyan-500">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-gray-400 mb-1">
+                <span>Appels au Service Client : <span id="callsVal" class="text-white">4</span></span>
+              </div>
+              <input type="range" id="callsInput" min="0" max="10" value="4" class="w-full accent-cyan-500">
+            </div>
+          </div>
+
+          <!-- AFFICHAGE DU SCORE PRÉDIT -->
+          <div class="p-4 rounded bg-gray-900/90 border border-gray-800 text-center">
+            <div class="text-gray-400 text-[11px] uppercase mb-1">Probabilité de Churn Calculée</div>
+            <div id="churnProb" class="text-3xl font-extrabold text-amber-400 mb-1">68.4%</div>
+            <div id="churnStatus" class="text-amber-400 font-semibold text-xs">[ RISQUE D'ABANDON ÉLEVÉ DÉTECTÉ ]</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATE 04 : THE BATTLEFIELD (PANNE & BUGS RÉSOLUS) -->
+  <section id="strata-4" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="font-mono text-xs text-amber-500 mb-2">STRATE 04 // THE BATTLEFIELD (CRISES DU MONDE RÉEL)</div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+        Bugs, Erreurs & Crises Résolues
+      </h2>
+      <p class="text-gray-400 text-lg max-w-3xl mb-12">
+        Les grands ingénieurs ne se reconnaissent pas à un code sans bug du premier coup, mais à leur vitesse méthodique
+        à diagnostiquer et corriger des architectures en panne.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- BATAILLE 1 -->
+        <div
+          class="p-6 rounded-lg bg-gray-900/40 border border-amber-900/40 hover:border-amber-500/50 transition-all space-y-3 font-mono text-xs">
+          <div class="flex justify-between items-center text-amber-400 font-semibold">
+            <span>[ CRISE #01 ]</span>
+            <span>FUITE D'AUTH SANCTUM MULTI-TENANT</span>
+          </div>
+          <p class="text-gray-300 text-sm font-sans">
+            <strong>Problème :</strong> Les cookies de session fuitaient entre différents sous-domaines universitaires
+            lors de l'authentification.
+          </p>
+          <div class="p-3 bg-black/60 rounded border border-gray-800 text-gray-400">
+            <span class="text-amber-400 block mb-1">Solution :</span>
+            Configuration dynamique du domaine de session dans Laravel + liste blanche stricte des origines CORS par
+            sous-domaine tenant.
+          </div>
+        </div>
+
+        <!-- BATAILLE 2 -->
+        <div
+          class="p-6 rounded-lg bg-gray-900/40 border border-amber-900/40 hover:border-amber-500/50 transition-all space-y-3 font-mono text-xs">
+          <div class="flex justify-between items-center text-amber-400 font-semibold">
+            <span>[ CRISE #02 ]</span>
+            <span>PERTE SONORE NAT SIP ASTERISK</span>
+          </div>
+          <p class="text-gray-300 text-sm font-sans">
+            <strong>Problème :</strong> Audio à sens unique lors des appels WebRTC & SIP à travers des pare-feux et
+            routeurs distants.
+          </p>
+          <div class="p-3 bg-black/60 rounded border border-gray-800 text-gray-400">
+            <span class="text-amber-400 block mb-1">Solution :</span>
+            Implémentation de relais TURN/STUN avec liaison explicite <code class="text-cyan-400">externip</code> et
+            <code class="text-cyan-400">localnet</code> dans rtp.conf sous Asterisk.
+          </div>
+        </div>
+
+        <!-- BATAILLE 3 -->
+        <div
+          class="p-6 rounded-lg bg-gray-900/40 border border-amber-900/40 hover:border-amber-500/50 transition-all space-y-3 font-mono text-xs">
+          <div class="flex justify-between items-center text-amber-400 font-semibold">
+            <span>[ CRISE #03 ]</span>
+            <span>PIÈGE DE SMOTE EN MACHINE LEARNING</span>
+          </div>
+          <p class="text-gray-300 text-sm font-sans">
+            <strong>Problème :</strong> Modèle affichant 99% de précision artificielle car le dataset contenait 95% de
+            non-churners.
+          </p>
+          <div class="p-3 bg-black/60 rounded border border-gray-800 text-gray-400">
+            <span class="text-amber-400 block mb-1">Solution :</span>
+            Bascule de l'évaluation vers le F1-Score & ROC-AUC avec sur-échantillonnage des classes minoritaires par
+            SMOTE.
+          </div>
+        </div>
+
+        <!-- BATAILLE 4 -->
+        <div
+          class="p-6 rounded-lg bg-gray-900/40 border border-amber-900/40 hover:border-amber-500/50 transition-all space-y-3 font-mono text-xs">
+          <div class="flex justify-between items-center text-amber-400 font-semibold">
+            <span>[ CRISE #04 ]</span>
+            <span>PLANTAGE ROUTE:CACHE MULTI-TENANT</span>
+          </div>
+          <p class="text-gray-300 text-sm font-sans">
+            <strong>Problème :</strong> L'exécution de <code class="text-cyan-400">route:cache</code> sous Laravel
+            cassait les règles de routage dynamique par sous-domaine.
+          </p>
+          <div class="p-3 bg-black/60 rounded border border-gray-800 text-gray-400">
+            <span class="text-amber-400 block mb-1">Solution :</span>
+            Intégration de résolveurs de closures Stancl Tenancy pour séparer les routes statiques du binding dynamique
+            de domaine.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATE 05 : L'ABSTRACTION ULTIME — MALILANG -->
+  <section id="strata-5" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950/90 relative overflow-hidden">
+    <!-- LUMIÈRE D'ARRIÈRE-PLAN -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none">
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="font-mono text-xs text-emerald-400 mb-2">// STRATE 05 — L'ABSTRACTION ULTIME</div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div>
+          <h2 class="font-display text-4xl md:text-6xl font-bold text-white">
+            MaliLang<span class="text-emerald-400">.mli</span>
+          </h2>
+          <p class="text-gray-300 text-lg max-w-2xl mt-3">
+            Un langage de programmation complet créé entièrement en langue <strong
+              class="text-emerald-400">Bambara</strong>.
+            Pourquoi les langages de programmation devraient-ils n'appartenir qu'aux langues occidentales ?
+          </p>
+        </div>
+        <div class="font-mono text-xs px-4 py-2 rounded bg-emerald-950/60 border border-emerald-800 text-emerald-400">
+          PHILOSOPHIE : LANGUE → ACCÈS → CRÉATION
+        </div>
+      </div>
+
+      <!-- PROGRESSION NARRATIVE -->
+      <div class="mb-10 overflow-x-auto">
+        <div class="flex items-center gap-2 font-mono text-xs min-w-max pb-2">
+          <span class="px-3 py-1.5 rounded border border-gray-700 bg-gray-900 text-gray-400">UTILISATEUR</span>
+          <span class="text-gray-700">→</span>
+          <span class="px-3 py-1.5 rounded border border-gray-700 bg-gray-900 text-gray-400">APPLICATION</span>
+          <span class="text-gray-700">→</span>
+          <span class="px-3 py-1.5 rounded border border-gray-700 bg-gray-900 text-gray-400">SYSTÈME</span>
+          <span class="text-gray-700">→</span>
+          <span class="px-3 py-1.5 rounded border border-gray-700 bg-gray-900 text-gray-400">INFRASTRUCTURE</span>
+          <span class="text-gray-700">→</span>
+          <span
+            class="px-3 py-1.5 rounded border border-emerald-800 bg-emerald-950/40 text-emerald-300 font-bold">LANGAGE</span>
+          <span class="text-emerald-700">→</span>
+          <span
+            class="px-3 py-1.5 rounded border-2 border-emerald-500 bg-emerald-950/60 text-emerald-400 font-extrabold">CRÉATION</span>
+        </div>
+        <p class="text-gray-600 text-xs font-mono mt-2">Créer MaliLang est l'acte ultime d'un ingénieur qui ne se
+          contente pas d'utiliser les outils — il les invente.</p>
+      </div>
+
+      <!-- DICTIONNAIRE DE MOTS-CLÉS MALILANG -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 font-mono text-xs mb-10">
+        <div class="p-2.5 rounded bg-gray-900/80 border border-gray-800 text-center">
+          <span class="text-emerald-400 font-bold block">faleden</span>
+          <span class="text-gray-500 text-[10px]">let / var</span>
+        </div>
+        <div class="p-2.5 rounded bg-gray-900/80 border border-gray-800 text-center">
+          <span class="text-emerald-400 font-bold block">sebeni</span>
+          <span class="text-gray-500 text-[10px]">print / log</span>
+        </div>
+        <div class="p-2.5 rounded bg-gray-900/80 border border-gray-800 text-center">
+          <span class="text-emerald-400 font-bold block">ni</span>
+          <span class="text-gray-500 text-[10px]">if / si</span>
+        </div>
+        <div class="p-2.5 rounded bg-gray-900/80 border border-gray-800 text-center">
+          <span class="text-emerald-400 font-bold block">noteni</span>
+          <span class="text-gray-500 text-[10px]">else if</span>
+        </div>
+        <div class="p-2.5 rounded bg-gray-900/80 border border-gray-800 text-center">
+          <span class="text-emerald-400 font-bold block">barakunda</span>
+          <span class="text-gray-500 text-[10px]">function</span>
+        </div>
+        <div class="p-2.5 rounded bg-gray-900/80 border border-gray-800 text-center">
+          <span class="text-emerald-400 font-bold block">kilasi</span>
+          <span class="text-gray-500 text-[10px]">class</span>
+        </div>
+      </div>
+
+      <!-- CHEAT SHEET + REPL SIDE BY SIDE -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-6">
+        <!-- CHEAT SHEET -->
+        <div class="lg:col-span-1 p-4 rounded-xl bg-gray-900/60 border border-gray-800 font-mono text-xs">
+          <div class="text-emerald-400 border-b border-gray-800 pb-2 mb-3 font-semibold">// AIDE RAPIDE</div>
+          <div class="space-y-2 text-gray-400">
+            <div><span class="text-emerald-400">faleden</span> x = 10</div>
+            <div><span class="text-emerald-400">sebeni</span> "Bonjour"</div>
+            <div><span class="text-emerald-400">ni</span> x > 5 { }</div>
+            <div><span class="text-emerald-400">note</span> { }</div>
+            <div><span class="text-emerald-400">noteni</span> x == 3 { }</div>
+            <div><span class="text-emerald-400">kamasoro</span> x < 10 { }</div>
+                <div><span class="text-emerald-400">barakunda</span> nom(a) { }</div>
+                <div><span class="text-emerald-400">segini</span> a + 1</div>
+            </div>
+          </div>
+
+          <!-- REPL PRINCIPAL -->
+          <div class="lg:col-span-3">
+
+            <!-- ENVIRONNEMENT REPL INTERACTIF MALILANG -->
+            <div class="rounded-xl border border-emerald-800/60 bg-black overflow-hidden shadow-2xl">
+
+              <!-- BARRE D'ENTÊTE REPL -->
+              <div
+                class="bg-gray-900 px-6 py-3 border-b border-gray-800 flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-3 font-mono text-xs">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                  <span class="text-gray-400 ml-2">malilang_repl_v1.0.mli</span>
+                </div>
+
+                <div class="flex gap-2">
+                  <button id="loadPresetBtn"
+                    class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-gray-300 font-mono text-xs rounded transition-all">
+                    CHARGER EXEMPLE DE CODE
+                  </button>
+                  <button id="runMaliLangBtn"
+                    class="px-4 py-1 bg-emerald-500 hover:bg-emerald-400 text-black font-mono font-bold text-xs rounded transition-all flex items-center gap-2">
+                    <span>EXÉCUTER LE PROGRAMME</span>
+                    <span>▶</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- ÉDITEUR DE CODE & CONSOLE -->
+              <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-800">
+
+                <!-- ZONE DE SAISIE CODE -->
+                <div class="p-4 font-mono text-sm bg-gray-950/60">
+                  <label class="block text-gray-500 text-xs mb-2">// Code Source MaliLang (.mli)</label>
+                  <textarea id="maliLangInput" rows="12"
+                    class="w-full bg-transparent text-emerald-300 focus:outline-none resize-none leading-relaxed font-mono selection:bg-emerald-900 selection:text-white"
+                    spellcheck="false"># Programme écrit en langage Bambara
+
+faleden nom = "Papin"
+sebeni "An ni sogoma, " + nom
+
+faleden age = 24
+ni age >= 18 {
+    sebeni "Mogoba de don! (Accès Adulte)"
+} note {
+    sebeni "Denmisen (Mineur)"
+}</textarea>
+                </div>
+
+                <!-- ZONE DE SORTIE CONSOLE -->
+                <div class="p-4 font-mono text-sm bg-black flex flex-col justify-between">
+                  <div>
+                    <div class="text-gray-500 text-xs mb-2 flex justify-between">
+                      <span>// Sortie Console</span>
+                      <span id="execTime" class="text-emerald-500">PRÊT</span>
+                    </div>
+                    <div id="maliLangConsole" class="text-gray-200 whitespace-pre-wrap leading-relaxed min-h-[180px]">
+                      [REPL MaliLang Initialisé]
+                      Cliquez sur 'EXÉCUTER LE PROGRAMME' pour exécuter le code Bambara avec le moteur interpréteur
+                      natif.
+                    </div>
+                  </div>
+
+                  <div class="pt-3 border-t border-gray-900 text-gray-600 text-xs flex justify-between">
+                    <span>AST : ÉVALUÉ</span>
+                    <span>MOTS-CLÉS : BAMBARA</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+  </section>
+
+  <!-- STRATE 06 : LABORATOIRE & TRANSMISSION (CONTACT) -->
+  <section id="strata-6" class="py-24 px-6 md:px-12 border-b border-gray-900 bg-gray-950">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- EXPÉRIMENTATIONS EN COURS DANS LE LABO -->
+      <div class="mb-20">
+        <div class="font-mono text-xs text-cyan-500 mb-2">STRATE 06 // LABORATOIRE</div>
+        <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-8">
+          Expérimentations Futures
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-lg bg-gray-900/40 border border-gray-800">
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-mono text-[10px] font-bold">EN
+              LIGNE</span>
+            <h3 class="font-display text-lg font-bold text-white mt-3 mb-2">LLM Local Contexte Africain</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Auto-hébergement d'OpenWebUI avec modèles spécialisés pour la documentation technique hors-ligne en
+              Afrique de l'Ouest.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-lg bg-gray-900/40 border border-gray-800">
+            <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-400 font-mono text-[10px] font-bold">EN
+              EXPÉRIMENTATION</span>
+            <h3 class="font-display text-lg font-bold text-white mt-3 mb-2">VoIP Mesh Distribuée</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Routage vocal SIP local à très faible bande passante sur nœuds alimentés par énergie solaire.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-lg bg-gray-900/40 border border-gray-800">
+            <span
+              class="px-2 py-0.5 rounded bg-purple-950 text-purple-400 font-mono text-[10px] font-bold">CONFIDENTIEL</span>
+            <h3 class="font-display text-lg font-bold text-white mt-3 mb-2">Moteur Multi-Tenant Autonome</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Auto-provisionnement dynamique d'isolation de bases de données cloud basé sur les pics de trafic.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONSOLE DE TRANSMISSION (FORMULAIRE DE CONTACT) -->
+      <div class="p-8 md:p-12 rounded-2xl bg-black border border-gray-800 max-w-3xl mx-auto shadow-2xl">
+        <div class="font-mono text-xs text-cyan-400 mb-2">// DERNIER ACTE // CONSOLE DE TRANSMISSION</div>
+        <h2 class="font-display text-3xl font-bold text-white mb-2">Construisons Quelque Chose De Grand.</h2>
+        <p class="text-gray-400 text-sm mb-8">
+          Vous avez atteint la fin des strates du système. Envoyez une transmission directe vers mon serveur à Bamako.
+        </p>
+
+        <form id="transmissionForm" class="space-y-4 font-mono text-xs">
+          <div>
+            <label class="block text-gray-500 mb-1">VOTRE NOM / IDENTIFIANT</label>
+            <input type="text" id="senderName" required placeholder="ex: Lead Architecte / Recruteur"
+              class="w-full p-3 rounded bg-gray-900 border border-gray-800 text-white focus:outline-none focus:border-cyan-500 transition-all">
+          </div>
+
+          <div>
+            <label class="block text-gray-500 mb-1">ADRESSE EMAIL</label>
+            <input type="email" id="senderEmail" required placeholder="nom@entreprise.com"
+              class="w-full p-3 rounded bg-gray-900 border border-gray-800 text-white focus:outline-none focus:border-cyan-500 transition-all">
+          </div>
+
+          <div>
+            <label class="block text-gray-500 mb-1">BRIEF DU PROJET / MESSAGE</label>
+            <textarea id="senderMessage" rows="4" required
+              placeholder="Décrivez votre projet système ou votre opportunité..."
+              class="w-full p-3 rounded bg-gray-900 border border-gray-800 text-white focus:outline-none focus:border-cyan-500 transition-all resize-none"></textarea>
+          </div>
+
+          <button type="submit" id="submitTransmission"
+            class="w-full py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold text-sm rounded transition-all flex items-center justify-center gap-2">
+            <span>ENVOYER LA TRANSMISSION À BAMAKO </span>
+          </button>
+        </form>
+
+        <div id="transmissionSuccess"
+          class="hidden mt-4 p-4 rounded bg-emerald-950 border border-emerald-800 text-emerald-400 font-mono text-xs text-center">
+          TRANSMISSION ENVOYÉE AVEC SUCCÈS. RÉPONSE SOUS 24H.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- PIED DE PAGE TÉLÉMÉTRIE -->
+  <footer
+    class="relative z-20 py-8 px-6 md:px-12 bg-gray-950 border-t border-gray-900 font-mono text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <div>
+      © 2026 MASSIRÉ KAMARA — INGÉNIEUR SYSTÈMES & LOGICIEL (BAMAKO, MALI)
+    </div>
+    <div class="flex gap-4 text-gray-400">
+      <a href="https://github.com/Massire17" target="_blank" class="hover:text-cyan-400">GITHUB</a>
+      <a href="https://www.linkedin.com/in/massiré-kamara-0b9a391a1/" target="_blank"
+        class="hover:text-cyan-400">LINKEDIN</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PRINCIPAL -->
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
